@@ -8,6 +8,7 @@ const Tools = () => {
   return (
     <section className='bg-menu mt-20' id='tools'>
       <div className='new-container py-10'>
+      <h1 className='blog-headers mb-5'>Tools</h1>
         <ul className='flex gap-4 lg:flex-row flex-col'>
           <li className='flex gap-3 items-center'>
             <Button
@@ -47,8 +48,8 @@ const Tools = () => {
           <li className='flex gap-3 items-center'>
             <Button
               label={'Infrastructure'}
-              className={`${selectedJob == 'structure' ? 'bg-blue-600' : ''}`}
-              onClick={() => setSelectedJob(prev => (prev == 'structure' ? '' : 'structure'))}
+              className={`${selectedJob == 'infrastructure' ? 'bg-blue-600' : ''}`}
+              onClick={() => setSelectedJob(prev => (prev == 'infrastructure' ? '' : 'infrastructure'))}
             />
           </li>
         </ul>

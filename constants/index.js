@@ -17,7 +17,7 @@ export const softwares = [
       { image: '/images/devops-5.png', label: 'YouTrack', jobType: 'test' },
       { image: '/images/devops-6.png', label: 'Appium', jobType: 'test' },
       { image: '/images/devops-7.png', label: 'Cypress', jobType: 'test' },
-      { image: '/images/mobile-1.png', label: 'Jmeter', jobType: 'test' },
+      { image: '/images/qa-4.png', label: 'Jmeter', jobType: 'test' },
     ],
   },
   {
