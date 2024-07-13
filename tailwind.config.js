@@ -1,18 +1,48 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
+      colors: {
+        'paragraph-light-dark': '#18191F',
+        'paragraph-dark-2': '#464359',
+        'btn': '#1B5BF7',
+        'title': '#1b5bf7',
+        'card-1': '#e0e8ff',
+        'delever': '#ff5521',
+      },
+      boxShadow: {
+        'header-shadow': '0 1px 0 #e5e9f2;',
+        'contact': '2px 10px 28px rgba(75, 0, 129, .12);',
+      },
+      backgroundColor: {
+        menu: '#f5f8ff',
+        truck: '#ffded4',
+        devops: '#A8BFFF',
+        frontend: '#C6D6FF',
+        backend: '#BDDAED',
+        mobile: '#DBE5FF',
+        test: '#E1E9FE',
+        structure: '#D1DDE8',
+        design: '#CED6EE',
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'bg-pattern': 'background-image:url(/images/background-pattern.jpeg)',
+      },
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        slide: '5s  infinite linear',
       },
     },
   },
   plugins: [],
-};
+}
