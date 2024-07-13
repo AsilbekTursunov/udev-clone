@@ -74,7 +74,7 @@ const Tools = () => {
                       ? ' bg-backend'
                       : skill.jobType == 'test'
                       ? ' bg-test'
-                      : skill.jobType == 'structure'
+                      : skill.jobType == 'infrastructure'
                       ? ' bg-structure'
                       : skill.jobType == 'mobile'
                       ? ' bg-mobile'
