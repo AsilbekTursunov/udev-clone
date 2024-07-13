@@ -10,7 +10,7 @@ const Hero = () => {
         <div className='flex gap-1 flex-col lg:flex-row py-44'>
           <div className='flex flex-col items-center lg:items-start justify-center lg:justify-start mb-10 lg:mb-0'>
             <img data-aos="fade-up" src='/images/logo-udev.png' alt='udev-log' className=' w-32 lg:w-72 mb-10 lg:mb-0' />
-            <h1 data-aos="fade-up" className='text-paragraph-light-dark text-[24px] lg:text-[40px] font-bold text-center lg:text-start'>IT-Outsourcing Company</h1>
+             
             <h1 data-aos="fade-up" className='text-btn text-[24px] lg:text-[40px] font-bold text-center lg:text-start'>
               IT-Outsourcing Company Optimization IT consulting infrastructure
             </h1>
