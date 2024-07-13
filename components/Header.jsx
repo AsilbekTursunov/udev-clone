@@ -66,13 +66,13 @@ const menuItems = [
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
   useEffect(() => {
-    Aos.init({ duration: 500 })
+    Aos.init({ duration: 500, disable:'mobile' })
   })
   return (
     <>
       <header
         data-aos='fade-down'
-        class=' fixed inset-x-0 top-0 z-50  shadow-header-shadow bg-white'
+        class='fixed inset-x-0 top-0 z-50  shadow-header-shadow bg-white'
         id='#home'
       >
         <div>
