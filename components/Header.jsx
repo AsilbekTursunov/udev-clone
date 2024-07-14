@@ -8,44 +8,46 @@ import { ChevronDown } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { FaYoutube } from 'react-icons/fa'
 import { IoLogoInstagram, IoLogoTwitter } from 'react-icons/io'
+import LanguageChanger from './LanguageChanger'
+import { useTranslation } from 'react-i18next'
 
 const menuItems = [
-  { label: 'Direction', href: '#direction' },
-  { label: 'Commond', href: '#commond' },
+  { label: 'direction', href: '#direction' },
+  { label: 'commond', href: '#commond' },
   {
-    label: 'Services',
+    label: 'services',
     href: '#services',
-    header: 'Services',
+    header: 'services',
     values: [
       {
         image: '/images/services-1.svg',
-        label: `Mobile development Development of mobile applications`,
+        label: `nav-mobile-dev`,
         href: '#mobile-development',
       },
       {
         image: '/images/services-2.svg',
-        label: `Development and implementation ERP systems`,
+        label: `mobile-dev-headline`,
         href: '#erp',
       },
       {
         image: '/images/services-3.svg',
-        label: `User interface, User experience design`,
+        label: `nav-ui`,
         href: '#ui-design',
       },
-      { image: '/images/services-4.svg', label: `IT consulting`, href: '#consulting' },
+      { image: '/images/services-4.svg', label: `nav-it`, href: '#consulting' },
       {
         image: '/images/services-5.svg',
-        label: `Optimization IT consulting infrastructure`,
+        label: `nav-optimise`,
         href: '#optimise',
       },
     ],
   },
-  { label: 'Tools', href: '#tools' },
-  { label: 'Clients', href: '#clients' },
+  { label: 'tools', href: '#tools' },
+  { label: 'clients', href: '#clients' },
   {
-    label: 'Portfolio',
+    label: 'portfolio',
     href: '#portfolio',
-    header: 'Portfolio',
+    header: 'portfolio',
     values: [
       { image: '/images/portfolio-1.svg', label: `Delever`, href: '#delever' },
       { image: '/images/portfolio-2.svg', label: `Sms.uz`, href: '#sms' },
@@ -53,46 +55,56 @@ const menuItems = [
       { image: '/images/portfolio-4.svg', label: `Iman`, href: '#iman' },
     ],
   },
-  {
-    label: 'Languages',
-    href: 'languages',
-    values: [
-      { image: '/images/flag-ru.svg', label: `Rus` },
-      { image: '/images/flag-eng.svg', label: `Eng` },
-    ],
-  },
 ]
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
+  const { t, i18n } = useTranslation()
+
   useEffect(() => {
-    Aos.init({ duration: 500, disable:'mobile' })
+    Aos.init({ duration: 500, disable: window.innerWidth < 1070 })
   })
+  const handleChange = language => {
+    i18n.changeLanguage(language)
+  }
   return (
     <>
       <header
         data-aos='fade-down'
-        class='fixed inset-x-0 top-0 z-50  shadow-header-shadow bg-white'
+        className='fixed inset-x-0 top-0 z-50  shadow-header-shadow bg-white'
         id='#home'
       >
         <div>
           <div className='new-container'>
-            <nav class='flex items-center justify-between  h-[72px]  ' aria-label='Global'>
-              <div class='flex lg:flex-1'>
-                <a href='#home' class='-m-1.5 p-1.5'>
-                  <span class='sr-only'>Your Company</span>
-                  <img class='h-[44px]   w-[105px]' src='/images/logo-udev.png' alt='' />
+            <nav className='flex items-center justify-between  h-[72px]  ' aria-label='Global'>
+              <div className='flex lg:flex-1'>
+                <a href='#home' className='-m-1.5 p-1.5'>
+                  <img className='h-[44px]   w-[105px]' src='/images/logo-udev.png' alt='' />
                 </a>
               </div>
-              <div class='flex lg:hidden'>
+              <div className='flex gap-4 lg:hidden'>
+                <div className='flex items-center gap-4'>
+                  <img
+                    src={'/images/flag-eng.svg'}
+                    alt=''
+                    className={`w-[20px] h-[20px] cursor-pointer `}
+                    onClick={() => handleChange('en')}
+                  />
+                  <img
+                    src={'/images/flag-ru.svg'}
+                    alt=''
+                    className={`w-[20px] h-[20px] cursor-pointer `}
+                    onClick={() => handleChange('ru')}
+                  />
+                </div>
                 <button
                   type='button'
-                  class='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
+                  className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
                   onClick={() => setOpenMenu(true)}
                 >
-                  <span class='sr-only'>Open main menu</span>
+                  <span className='sr-only'>Open main menu</span>
                   <svg
-                    class='h-6 w-6'
+                    className='h-6 w-6'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke-width='1.5'
@@ -107,27 +119,30 @@ const Header = () => {
                   </svg>
                 </button>
               </div>
-              <ul class='hidden lg:flex gap-2 items-center'>
+              <ul className='hidden lg:flex gap-2 items-center'>
                 {menuItems.map(item => (
-                  <li className={`p-2 mr-2 relative flex justify-center ${item.label}`}>
+                  <li
+                    key={item.label}
+                    className={`p-2 mr-2 relative flex justify-center ${item.label}`}
+                  >
                     <a
                       href={item.href}
-                      class='text-sm font-bold leading-6 text-paragraph-light-dark flex items-center gap-2'
+                      className='text-sm font-bold leading-6 text-paragraph-light-dark flex items-center gap-2'
                     >
-                      {item.label} {item.values && <ChevronDown size={10} />}
+                      {t(`${item.label}`)} {item.values && <ChevronDown size={10} />}
                     </a>
                     {item.values && (
                       <span
                         className={`absolute  hidden ${
                           item.header ? 'py-6' : 'py-2'
-                        }  rounded-[8px] shadow-md top-10 bg-white ${
+                        }  rounded-[8px] shadow-lg border top-10 bg-white ${
                           item.header === 'Services' || item.header === 'Portfolio'
                             ? '-left-24'
                             : '-left-2'
                         } ${item.label}-popup`}
                       >
                         {item.header && (
-                          <h3 className='text-neutral-200 font-normal text-md pb-4 pl-3'>
+                          <h3 className='text-neutral-200  font-normal text-md pb-4 pl-3'>
                             {item.header}
                           </h3>
                         )}
@@ -136,9 +151,9 @@ const Header = () => {
                             <a
                               href={popup.href}
                               className={`flex items-center bg-white px-6 py-2 justify-start gap-2 hover:bg-blue-600 hover:text-white cursor-pointer ${
-                                item.header === 'Services'
-                                  ? ' w-[350px]'
-                                  : item.header === 'Portfolio'
+                                item.header === 'services'
+                                  ? ' w-[320px]'
+                                  : item.header === 'portfolio'
                                   ? 'w-72'
                                   : 'w-32'
                               }`}
@@ -150,7 +165,7 @@ const Header = () => {
                                   item.header ? 'w-[48px] h-[48px]' : 'w-[28px] h-[28px]'
                                 } mr-2`}
                               />
-                              <span className='text-[13px]  '>{popup.label}</span>
+                              <span className='text-[13px]  '>{t(`${popup.label}`)}</span>
                             </a>
                           )
                         })}
@@ -158,12 +173,18 @@ const Header = () => {
                     )}
                   </li>
                 ))}
+                <li className='p-2 mr-2 relative flex justify-center languages'>
+                  <span className='text-sm font-bold leading-6 text-paragraph-light-dark flex items-center gap-2'>
+                    {t('languages')} &nbsp; <ChevronDown size={10} />
+                  </span>
+                  <LanguageChanger />
+                </li>
                 <li className='hover:scale-105 transition-all'>
                   <a
                     href='#contact'
-                    class='text-sm font-bold bg-btn text-white leading-6  px-6 py-3 rounded-[8px] '
+                    className='text-sm font-bold bg-btn text-white leading-6  px-6 py-3 rounded-[8px] '
                   >
-                    Contact
+                    {t('contact')}
                   </a>
                 </li>
               </ul>
@@ -171,68 +192,68 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div class='lg:hidden fixed  h-screen top-0 z-50  ' role='dialog' aria-modal='true'>
+      <div className='lg:hidden fixed  h-screen top-0 z-50  ' role='dialog' aria-modal='true'>
         <div
-          class={`fixed inset-y-0 right-0 ${
+          className={`fixed inset-y-0 right-0 ${
             openMenu ? 'translate-x-0' : 'translate-x-full'
           } transition-all duration-[0.5s] z-50 w-full overflow-y-auto bg-menu px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10`}
         >
-          <div class='flex items-center justify-between'>
-            <a href='#' class='-m-1.5 p-1.5'>
-              <span class='sr-only'>Your Company</span>
-              <img class='h-[44px]   w-[105px]' src='/images/logo-udev.png' alt='' />
+          <div className='flex items-center justify-between'>
+            <a href='#' className='-m-1.5 p-1.5'>
+              <img className='h-[44px]   w-[105px]' src='/images/logo-udev.png' alt='' />
             </a>
-            <button
-              type='button'
-              class='-m-2.5 rounded-md p-2.5 text-gray-700'
-              onClick={() => setOpenMenu(false)}
-            >
-              <span class='sr-only'>Close menu</span>
-              <svg
-                class='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke-width='1.5'
-                stroke='currentColor'
-                aria-hidden='true'
+            <div className='flex items-center justify-between gap-5'>
+              <button
+                type='button'
+                className='-m-2.5 rounded-md p-2.5 text-gray-700'
+                onClick={() => setOpenMenu(false)}
               >
-                <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' />
-              </svg>
-            </button>
+                <svg
+                  className='h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                  aria-hidden='true'
+                >
+                  <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' />
+                </svg>
+              </button>
+            </div>
           </div>
-          <div class='mt-6 flow-root'>
-            <div class='-my-6 divide-y divide-gray-500/10'>
-              <ul class='space-y-2 py-6 flex flex-col text-center'>
+          <div className='mt-6 flow-root'>
+            <div className='-my-6 divide-y divide-gray-500/10'>
+              <ul className='space-y-2 py-6 flex flex-col text-center'>
                 <li>
                   <a
                     href={'#'}
-                    class='text-sm font-bold  justify-center leading-6 text-paragraph-light-dark flex items-center gap-2'
+                    className='text-sm font-bold  justify-center leading-6 text-paragraph-light-dark flex items-center gap-2'
                   >
-                    Services
+                    {t('services')}
                   </a>
                 </li>
                 <li>
                   <a
                     href={'#'}
-                    class='text-sm font-bold justify-center  leading-6 text-paragraph-light-dark flex items-center gap-2'
+                    className='text-sm font-bold justify-center  leading-6 text-paragraph-light-dark flex items-center gap-2'
                   >
-                    Clients
+                    {t('clients')}
                   </a>
                 </li>
                 <li>
                   <a
                     href={'#'}
-                    class='text-sm font-bold justify-center  leading-6 text-paragraph-light-dark flex items-center gap-2'
+                    className='text-sm font-bold justify-center  leading-6 text-paragraph-light-dark flex items-center gap-2'
                   >
-                    Commond
+                    {t('commond')}
                   </a>
                 </li>
                 <li className='hover:scale-105 transition-all flex flex-col'>
                   <a
                     href='#contact'
-                    class='text-sm font-bold  bg-btn text-white leading-6  px-6 py-3 rounded-[8px] '
+                    className='text-sm font-bold  bg-btn text-white leading-6  px-6 py-3 rounded-[8px] '
                   >
-                    Contact
+                    {t('contact')}
                   </a>
                 </li>
                 <li className='flex justify-center gap-5 pt-5'>

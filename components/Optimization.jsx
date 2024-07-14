@@ -1,17 +1,19 @@
-import React from 'react'
+'use client'
+import { useTranslation } from 'react-i18next'
 
 const Optimization = () => {
+  const { t } = useTranslation()
   return (
     <section className='bg-menu py-10' id='optimise'>
       <div className='new-container py-10'>
-        <h2 className='blog-headers text-start '>Optimization <br /> Infrastructure</h2>
+        <h2 className='blog-headers text-start '>{t(`structure`)}</h2>
         <div className='mt-10 flex flex-col md:flex-row gap-10'>
           <div data-aos="zoom-in" data-aos-duration="300" className=' flex  justify-center  items-center md:w-1/2'>
             <img src='/images/erp-system.jpeg' alt='team-image' className=' w-[1000px]' />
           </div>
           <div data-aos="fade-left" data-aos-duration="300" className='flex flex-col md:w-1/2'>
             <p className='text-paragraph-light-dark text-[16px] md:text-2xl'>
-            Our experienced professionals will help you optimize your infrastructure
+            {t(`optimise-desc`)}
             </p>
             <div className='grid grid-cols-2 lg:grid-cols-3 gap-2 items-center justify-center mt-5 '>
               {[
@@ -23,7 +25,7 @@ const Optimization = () => {
                 { image: '/images/optimization-6.png', label: 'Cloud' },
                 { image: '/images/optimization-6.png', label: 'CI / CD' },
               ].map(item => (
-                <div className='flex flex-col items-center gap-3 bg-card-1 p-5 rounded-[8px] h-full'>
+                <div key={item.label} className='flex flex-col items-center gap-3 bg-card-1 p-5 rounded-[8px] h-full'>
                   <img src={item.image} alt={item.label} className=' w-8 md:w-14' />
                   <p className='  text-[14px] md:text-lg font-semibold'>{item.label}</p>
                 </div>

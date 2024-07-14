@@ -2,13 +2,15 @@
 import React, { useState } from 'react'
 import Button from './Button'
 import { softwares } from '@/constants'
+import { useTranslation } from 'react-i18next'
 
 const Tools = () => {
   const [selectedJob, setSelectedJob] = useState('')
+  const { t } = useTranslation()
   return (
     <section className='bg-menu mt-20' id='tools'>
       <div className='new-container py-10'>
-      <h1 className='blog-headers mb-5'>Tools</h1>
+        <h1 className='blog-headers mb-5'>{t(`tools`)}</h1>
         <ul className='flex gap-4 lg:flex-row flex-col'>
           <li className='flex gap-3 items-center'>
             <Button
@@ -40,7 +42,7 @@ const Tools = () => {
           </li>
           <li className='flex gap-3 items-center'>
             <Button
-              label={'UX/UI'}
+              label={'UI/UX'}
               className={`${selectedJob == 'design' ? 'bg-blue-600' : ''}`}
               onClick={() => setSelectedJob(prev => (prev == 'design' ? '' : 'design'))}
             />
@@ -49,7 +51,9 @@ const Tools = () => {
             <Button
               label={'Infrastructure'}
               className={`${selectedJob == 'infrastructure' ? 'bg-blue-600' : ''}`}
-              onClick={() => setSelectedJob(prev => (prev == 'infrastructure' ? '' : 'infrastructure'))}
+              onClick={() =>
+                setSelectedJob(prev => (prev == 'infrastructure' ? '' : 'infrastructure'))
+              }
             />
           </li>
         </ul>
@@ -58,7 +62,9 @@ const Tools = () => {
             <ul
               key={item.colums}
               className={`grid grid-cols-4 ${
-                item.colums == 'third-column' ? 'md:col-span-2 lg:col-span-1 md:grid-cols-8 lg:grid-cols-4' : 'md:grid-cols-4'
+                item.colums == 'third-column'
+                  ? 'md:col-span-2 lg:col-span-1 md:grid-cols-8 lg:grid-cols-4'
+                  : 'md:grid-cols-4'
               }  lg:grid-cols-4 gap-2 `}
             >
               {item.skills.map(skill => (

@@ -1,6 +1,8 @@
-import React from 'react'
+'use client'
+import { useTranslation } from 'react-i18next'
 //w-full sm:w-1/2 md:w-1/3
 const Wework = () => {
+  const { t } = useTranslation()
   return (
     <section className='py-10'>
       <div className='new-container'>
@@ -12,35 +14,38 @@ const Wework = () => {
           {[
             {
               image: '/images/work-1.svg',
-              header: 'Contact',
-              label: 'Send us your project request or project idea.',
+              header: 'contact',
+              label: 'we-work-one-info',
             },
             {
               image: '/images/work-2.svg',
-              header: 'Analysis',
-              label: 'We will contact you to clarify your project requirements.',
+              header: 'we-work-two-headline',
+              label: 'we-work-two-info',
             },
             {
               image: '/images/work-3.svg',
-              header: 'Offer',
-              label: 'We will provide you with our free, non-binding application.',
+              header: 'we-work-three-headline',
+              label: 'we-work-three-info',
             },
             {
               image: '/images/work-4.svg',
-              header: 'Team',
-              label: 'We provide a team for your requirements.',
+              header: 'team',
+              label: 'we-work-four-info',
             },
             {
               image: '/images/work-5.svg',
-              header: 'Start',
-              label: `You will get to know the team and we'll get started.`,
+              header: 'we-work-five-headline',
+              label: `we-work-five-info`,
             },
           ].map(item => (
-            <div className='flex flex-row lg:flex-col items-center lg:justify-center gap-5 p-4 z-20'>
+            <div
+              key={item.header}
+              className='flex flex-row lg:flex-col items-center lg:justify-center gap-5 p-4 z-20'
+            >
               <img className='w-14 h-14 object-cover' src={item.image} alt={item.header} />
               <div className='lg:mt-4 flex flex-row items-center gap-5 lg:flex-col justify-center'>
-                <h2 className='text-2xl font-semibold '>{item.header}</h2>
-                <p className='text-sm text-gray-600 lg:text-center'>{item.label}</p>
+                <h2 className='text-2xl font-semibold '>{t(`${item.header}`)}</h2>
+                <p className='text-sm text-gray-600 lg:text-center'>{t(`${item.label}`)}</p>
               </div>
             </div>
           ))}

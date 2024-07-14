@@ -25,13 +25,13 @@
     @apply w-[1170px] mx-auto;
   }
 }
-.Portfolio:hover .Portfolio-popup {
+.portfolio:hover .portfolio-popup {
   display: block;
 }
-.Services:hover .Services-popup {
+.services:hover .services-popup {
   display: block;
 }
-.Languages:hover .Languages-popup {
+.languages:hover .languages-popup {
   display: block;
 }
 @keyframes slide {

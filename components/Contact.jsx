@@ -1,19 +1,21 @@
-import React from 'react'
+'use client'
+import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
+  const { t } = useTranslation()
   return (
     <section>
       <div className='new-container bg-white' id='contact'>
-        <h1 className='blog-headers'>Contact</h1>
+        <h1 className='blog-headers'>{t('contact')}</h1>
         <div className='mt-10 shadow-contact   p-10 rounded-xl'>
-          <h4 className='text-lg text-paragraph-light-dark font-semibold'>Leave us a message</h4>
+          <h4 className='text-lg text-paragraph-light-dark font-semibold'>{t('message-headline')}</h4>
           <div className='flex gap-5 mt-5 flex-col lg:flex-row'>
             <div className='flex flex-col gap-8 lg:w-1/2 w-full'>
               <label htmlFor='name' className='relative'>
                 <input
                   type='text'
                   required
-                  placeholder='Name'
+                  placeholder={t('message-name')}
                   className='  w-full h-full border-[1.5px] text-xl border-neutral-300 p-4 rounded-[4px] outline-neutral-400 '
                   id='name'
                 />
@@ -22,16 +24,18 @@ const Contact = () => {
                 <input
                   type='email'
                   required
-                  placeholder='Email'
+                  placeholder={t('message-email')}
                   className='  w-full h-full border-[1.5px] text-xl border-neutral-300 p-4 rounded-[4px] outline-neutral-400 '
                   id='name'
                 />
               </label>
               <textarea
-                placeholder='Message'
+                placeholder={t('message-info')}
                 className=' w-full h-full border-[1.5px] text-xl border-neutral-300 p-4 rounded-[4px] outline-neutral-400 mt-5'
               />
-              <button className='hover:scale-105 transition-all text-lg font-bold bg-btn text-white  md:self-start px-14 py-2 rounded-[4px] '>Send</button>
+              <button className='hover:scale-105 transition-all text-lg font-bold bg-btn text-white  md:self-start px-14 py-2 rounded-[4px] '>
+              {t('send')}
+              </button>
             </div>
             <div className='lg:w-1/2 w-full'>
               <iframe

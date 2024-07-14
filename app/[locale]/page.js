@@ -16,10 +16,10 @@ import Team from '@/components/Team'
 import Tools from '@/components/Tools'
 import Uiux from '@/components/Uiux'
 import Wework from '@/components/Wework'
-
-export default function Home() {
+import '../i18n.jsx'
+export default async function Home() {
   return (
-    <div>
+    <main>
       <Header />
       <Hero />
       <Direction />
@@ -30,7 +30,7 @@ export default function Home() {
       <Optimization />
       <Consulting />
       <Tools />
-      <Clients /> 
+      <Clients />
       <div
         className='  bg-contain py-10'
         style={{ backgroundImage: 'url(/images/background-pattern.jpeg)' }}
@@ -43,6 +43,6 @@ export default function Home() {
         <Contact />
       </div>
       <Footer />
-    </div>
+    </main>
   )
 }

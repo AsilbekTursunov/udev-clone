@@ -1,51 +1,53 @@
-import React from 'react'
+'use client'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
+  const { t } = useTranslation()
   return (
     <section className='bg-menu py-5'>
       <div className='new-container'>
         <div className='flex justify-center py-5'>
-          <img class='h-[44px]   w-[105px]' src='/images/logo-udev.png' alt='' />
+          <img className='h-[44px]   w-[105px]' src='/images/logo-udev.png' alt='' />
         </div>
         <div className='flex flex-col lg:flex-row gap-5 justify-between py-5'>
           <div className='flex flex-col gap-4'>
-            <h3 className='text-paragraph-light-dark text-lg font-semibold'>About</h3>
+            <h3 className='text-paragraph-light-dark text-lg font-semibold'>{t('about')}</h3>
             <a href='#direction' className='text-blue-600 text-lg font-medium hover:underline '>
-              Direction
+              {t('direction')}
             </a>
             <a href='#commond' className='text-blue-600 text-lg font-medium hover:underline '>
-              Commond
+              {t('commond')}
             </a>
             <a href='#tools' className='text-blue-600 text-lg font-medium hover:underline '>
-              Tools
+              {t('tools')}
             </a>
             <a href='#clients' className='text-blue-600 text-lg font-medium hover:underline '>
-              Clients
+              {t('clients')}
             </a>
           </div>
           <div className='flex flex-col gap-4'>
-            <h3 className='text-paragraph-light-dark text-lg font-semibold'>Services</h3>
+            <h3 className='text-paragraph-light-dark text-lg font-semibold'>{t('services')}</h3>
             <a
               href='#mobile-development'
               className='text-blue-600 text-lg font-medium hover:underline '
             >
-              Development of mobile applications
+              {t('mobile-dev-headline')}
             </a>
             <a href='#erp' className='text-blue-600 text-lg font-medium hover:underline '>
-              Development and implementation ERP systems
+              {t('nav-erp')}
             </a>
             <a href='#ui-design' className='text-blue-600 text-lg font-medium hover:underline '>
-              User interface, User experience design
+              {t('nav-ui')}
             </a>
             <a href='#consulting' className='text-blue-600 text-lg font-medium hover:underline '>
-              IT consulting
+              {t('nav-it')}
             </a>
             <a href='#optimise' className='text-blue-600 text-lg font-medium hover:underline '>
-              Optimization IT consulting infrastructure
+              {t('nav-optimise')}
             </a>
           </div>
           <div className='flex flex-col gap-4'>
-            <h3 className='text-paragraph-light-dark text-lg font-semibold'>About</h3>
+            <h3 className='text-paragraph-light-dark text-lg font-semibold'>{t('portfolio')}</h3>
             <a href='#delever' className='text-blue-600 text-lg font-medium hover:underline '>
               Delever
             </a>

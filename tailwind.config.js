@@ -4,8 +4,10 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    `./i18nConfig.{js,jsx,ts,tsx}`,
   ],
   theme: {
+     
     extend: {
       colors: {
         'paragraph-light-dark': '#18191F',
@@ -33,14 +35,16 @@ module.exports = {
       backgroundImage: {
         'bg-pattern': 'background-image:url(/images/background-pattern.jpeg)',
       },
-      keyframes: {
-        slide: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-      },
       animation: {
-        slide: '5s  infinite linear',
+        scroll:
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
+          },
+        },
       },
     },
   },
