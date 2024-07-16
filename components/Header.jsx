@@ -136,13 +136,13 @@ const Header = () => {
                         className={`absolute  hidden ${
                           item.header ? 'py-6' : 'py-2'
                         }  rounded-[8px] shadow-lg border top-10 bg-white ${
-                          item.header === 'Services' || item.header === 'Portfolio'
+                          item.header === 'services' || item.header === 'portfolio'
                             ? '-left-24'
                             : '-left-2'
                         } ${item.label}-popup`}
                       >
                         {item.header && (
-                          <h3 className='text-neutral-200  font-normal text-md pb-4 pl-3'>
+                          <h3 className='text-neutral-200  font-normal text-md pb-4 pl-3 capitalize'>
                             {item.header}
                           </h3>
                         )}
