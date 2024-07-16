@@ -14,7 +14,7 @@
   body {
     width: 100%;
     overflow-x: hidden;
-    height: 100vh; 
+    height: 100vh;
   }
   .new-container {
     @apply mx-4;
@@ -57,25 +57,15 @@
 .blog-headers {
   @apply text-title text-[32px] md:text-[64px]  font-extrabold;
 }
-.clients,
-.clients-reverse {
+.clients {
   white-space: nowrap;
   overflow: hidden;
   padding: 20px 0;
 }
-.clients-logos {
-  @apply w-full;
+.clients-logos { 
   display: inline-block;
-  animation: 60s slide infinite linear;
-}
-.clients-logos-reverse {
-  @apply w-full;
-  display: inline-block;
-  animation: 60s reverseSlide infinite linear;
-}
+  animation: 10s slide infinite linear;
+} 
 .clients-logos img {
   @apply inline-block mx-10 shadow-md rounded-[15px] hover:scale-[1.1] transition duration-[.4s];
-}
-.clients-logos-reverse img {
-  @apply inline-block mx-10 shadow-md rounded-[15px] hover:scale-[1.1] transition duration-[.4s];
-}
+} 

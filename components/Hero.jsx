@@ -8,21 +8,7 @@ import { Typewriter } from 'react-simple-typewriter'
 
 const Hero = () => {
   const { t } = useTranslation()
-  const words = localStorage.getItem('i18nextLng') == 'en'
-  ? [
-      'Development of mobile applications',
-      'Development and implementation ERP systems',
-      'User interface, User experience design',
-      'Optimization IT consulting infrastructure',
-      'IT consulting',
-    ]
-  : [
-      'Разработка мобильных приложений',
-      'Разработка и внедрение ERP-систем',
-      'Наши опытные специалисты помогут вам оптимизировать вашу инфраструктуру',
-      'Оптимизация ИТ-консалтинговой инфраструктуры',
-      'ИТ-консалтинг',
-    ]
+   
   return (
     <section
       className='  bg-contain'
@@ -46,7 +32,7 @@ const Hero = () => {
               className='text-btn text-[24px] lg:text-[40px] font-bold text-center lg:text-start'
             >
               <Typewriter
-                words={words}
+                words={[t(`nav-mobile-dev`), t(`nav-erp`), t(`nav-ui`), t(`nav-optimise`), t(`nav-it`)]}
                 loop={Infinity}
                 cursor
                 cursorStyle='|'

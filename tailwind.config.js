@@ -7,7 +7,6 @@ module.exports = {
     `./i18nConfig.{js,jsx,ts,tsx}`,
   ],
   theme: {
-     
     extend: {
       colors: {
         'paragraph-light-dark': '#18191F',
@@ -36,13 +35,24 @@ module.exports = {
         'bg-pattern': 'background-image:url(/images/background-pattern.jpeg)',
       },
       animation: {
-        scroll:
-          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+        'loop-scroll': 'loop-scroll 30S linear infinite',
+        'loop-reverse': 'loop-reverse 30S linear infinite',
       },
       keyframes: {
-        scroll: {
+        'loop-scroll': {
+          from: {
+            transform: 'translateX(0)',
+          },
           to: {
-            transform: 'translate(calc(-50% - 0.5rem))',
+            transform: 'translateX(-100%)',
+          },
+        },
+        'loop-reverse': {
+          from: {
+            transform: 'translateX(-100%)',
+          },
+          to: {
+            transform: 'translateX(0%)',
           },
         },
       },
