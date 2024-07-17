@@ -69,13 +69,13 @@ const Header = () => {
   }
   return (
     <>
-      <header
+      <section
         data-aos='fade-down'
         className='fixed inset-x-0 top-0 z-50  shadow-header-shadow bg-white'
         id='#home'
       >
-        <div>
-          <div className='new-container'>
+        <section>
+          <section className='new-container'>
             <nav className='flex items-center justify-between  h-[72px]  ' aria-label='Global'>
               <div className='flex lg:flex-1'>
                 <a href='#home' className='-m-1.5 p-1.5'>
@@ -189,9 +189,9 @@ const Header = () => {
                 </li>
               </ul>
             </nav>
-          </div>
-        </div>
-      </header>
+          </section>
+        </section>
+      </section>
       <div className='lg:hidden fixed  h-screen top-0 z-50  ' role='dialog' aria-modal='true'>
         <div
           className={`fixed inset-y-0 right-0 ${

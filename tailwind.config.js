@@ -35,13 +35,15 @@ module.exports = {
         'bg-pattern': 'background-image:url(/images/background-pattern.jpeg)',
       },
       animation: {
-        'loop-scroll': 'loop-scroll 30S linear infinite',
+        'loop-scroll': 'loop-scroll 10S  infinite',
         'loop-reverse': 'loop-reverse 30S linear infinite',
+        'scroll':
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
       keyframes: {
         'loop-scroll': {
           from: {
-            transform: 'translateX(0)',
+            transform: 'translateX(0%)',
           },
           to: {
             transform: 'translateX(-100%)',
@@ -53,6 +55,11 @@ module.exports = {
           },
           to: {
             transform: 'translateX(0%)',
+          },
+        },
+        'scroll': {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
           },
         },
       },

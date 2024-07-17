@@ -35,20 +35,17 @@
   display: block;
 }
 @keyframes slide {
-  from {
-    transform: translateX(0%);
-  }
   to {
-    transform: translateX(-100%);
+    left: -200px;
   }
 }
 
 @keyframes reverseSlide {
   from {
-    transform: translateX(-100%);
+    left: 100%;
   }
   to {
-    transform: translateX(0%);
+    left: calc((240) * -1);
   }
 }
 .social-link {
@@ -57,15 +54,4 @@
 .blog-headers {
   @apply text-title text-[32px] md:text-[64px]  font-extrabold;
 }
-.clients {
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 20px 0;
-}
-.clients-logos { 
-  display: inline-block;
-  animation: 10s slide infinite linear;
-} 
-.clients-logos img {
-  @apply inline-block mx-10 shadow-md rounded-[15px] hover:scale-[1.1] transition duration-[.4s];
-} 
+ 
