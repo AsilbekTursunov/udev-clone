@@ -56,6 +56,13 @@ const Tools = () => {
               }
             />
           </li>
+          <li className='flex gap-3 items-center'>
+            <Button
+              label={'Mobile'}
+              className={`${selectedJob == 'mobile' ? 'bg-blue-600' : ''}`}
+              onClick={() => setSelectedJob(prev => (prev == 'mobile' ? '' : 'mobile'))}
+            />
+          </li>
         </ul>
         <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 '>
           {softwares.map(item => (
