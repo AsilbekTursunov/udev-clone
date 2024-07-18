@@ -8,10 +8,10 @@ const Optimization = () => {
       <div className='new-container py-10'>
         <h2 className='blog-headers text-start '>{t(`structure`)}</h2>
         <div className='mt-10 flex flex-col md:flex-row gap-10'>
-          <div data-aos="zoom-in" data-aos-duration="300" className=' flex  justify-center  items-center md:w-1/2'>
+          <div  className=' flex  justify-center  items-center md:w-1/2'>
             <img src='/images/erp-system.jpeg' alt='team-image' className=' w-[1000px]' />
           </div>
-          <div data-aos="fade-left" data-aos-duration="300" className='flex flex-col md:w-1/2'>
+          <div   className='flex flex-col md:w-1/2'>
             <p className='text-paragraph-light-dark text-[16px] md:text-2xl'>
             {t(`optimise-desc`)}
             </p>

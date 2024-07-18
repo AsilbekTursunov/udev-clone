@@ -13,7 +13,7 @@ const Uiux = () => {
       <div className='new-container'>
         <h2 className='blog-headers text-[32px] lg:text-[64px]'>{t('ui-ux-headline')}</h2>
         <div className='flex flex-col-reverse justify-center md:flex-row lg:justify-between gap-14 mt-14'>
-          <div data-aos='fade-up' data-aos-duration='300' className='w-full  md:w-1/2'>
+          <div    className='w-full  md:w-1/2'>
             <p className='text-paragraph-light-dark text-[16px] lg:text-2xl'>
             {t('ui-desc')}
             </p>
@@ -36,7 +36,7 @@ const Uiux = () => {
               ))}
             </div>
             <p className='text-3xl text-paragraph-dark-2 mt-10 font-semibold'>{t('tech')}</p>
-            <div className='flex gap-5 mt-5 flex-wrap  justify-start '>
+            <div className='flex  mt-5 flex-wrap  justify-evenly md:justify-start md:gap-5 '>
               {[
                 { image: '/images/figma.png', label: 'Figma' },
                 { image: '/images/sketch.png', label: 'Sketch' },
@@ -47,14 +47,14 @@ const Uiux = () => {
                   <img
                     src={item.image}
                     alt={item.label}
-                    className={` ${item.label === 'Lottie' ? 'w-4 md:w-10' : 'w-8 md:w-14'}`}
+                    className={` ${item.label === 'Lottie' ? 'w-6 md:w-12' : 'w-8 md:w-14'}`}
                   />
                   <p className='text-lg font-semibold'>{item.label}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div data-aos='zoom-in' data-aos-duration='300' className='w-full  md:w-1/2'>
+          <div   className='w-full  md:w-1/2'>
             <img src='/images/phone-pattern.jpeg' alt='phone' className='w-[1200px]' />
           </div>
         </div>

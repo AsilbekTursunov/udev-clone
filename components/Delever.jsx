@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next'
 
 const Delever = () => {
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   return (
     <section className='py-10' id='delever'>
       <div className='new-container'>
@@ -14,10 +14,10 @@ const Delever = () => {
           </p>
         </div>
         <div className='flex flex-col justify-center md:flex-row lg:justify-between gap-14 mt-14'>
-          <div data-aos="zoom-in" data-aos-duration="300"  className='w-full flex items-center  md:w-1/2'>
+          <div className='w-full flex items-center  md:w-1/2'>
             <img src='/images/delever.png' alt='phone' className='w-[1200px]' />
           </div>
-          <div data-aos="fade-left" data-aos-duration="300"  className='w-full  md:w-1/2'>
+          <div className='w-full  md:w-1/2'>
             <div className='hidden md:block my-2 '>
               <h2 className='font-extrabold  text-[32px] text-delever lg:text-[64px] '>Delever</h2>
               <p className='flex p-2 items-center justify-center gap-2 rounded-[50px] font-medium text-delever bg-truck w-fit'>
@@ -37,7 +37,10 @@ const Delever = () => {
                 { image: '/images/ui-5.png', label: 'Web Design' },
                 { image: '/images/ui-4.png', label: 'Mobile Design' },
               ].map(item => (
-                <div key={item.label} className='flex flex-col items-center gap-3 bg-menu p-5 rounded-[8px] '>
+                <div
+                  key={item.label}
+                  className='flex flex-col items-center gap-3 bg-menu p-5 rounded-[8px] '
+                >
                   <img src={item.image} alt={item.label} className=' w-8 md:w-14' />
                   <p className='  text-[14px] md:text-lg font-semibold'>{item.label}</p>
                 </div>

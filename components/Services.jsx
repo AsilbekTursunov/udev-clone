@@ -12,7 +12,7 @@ const Services = () => {
       <div className='new-container'>
         <h2 className='blog-headers text-[32px] lg:text-[64px]'>{t(`mobile-dev-headline`)}</h2>
         <div className='flex flex-col-reverse justify-center md:flex-row lg:justify-between gap-32 mt-14'>
-          <div data-aos='fade-up' data-aos-duration='300' className='w-full  md:w-1/2'>
+          <div    className='w-full  md:w-1/2'>
             <p className='text-paragraph-light-dark text-[16px] md:text-2xl'>
             {t(`mobile-dev-info`)}
             </p>
@@ -47,8 +47,7 @@ const Services = () => {
           </div>
           <div className='w-full flex  justify-center  items-center md:w-1/2'>
             <img
-              data-aos='zoom-in'
-              data-aos-duration='300'
+              
               src='/images/phone-pattern.jpeg'
               alt='phone'
               className='w-[1200px]'

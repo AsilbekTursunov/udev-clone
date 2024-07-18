@@ -14,10 +14,10 @@ const Goodzone = () => {
           </p>
         </div>
         <div className='flex flex-col justify-center md:flex-row lg:justify-between gap-14 '>
-          <div data-aos="zoom-in" data-aos-duration="300"  className='w-full flex items-center  md:w-1/2'>
+          <div    className='w-full flex items-center  md:w-1/2'>
             <img src='/images/goodzone.png' alt='store' className='w-[1200px]' />
           </div>
-          <div data-aos="fade-right" data-aos-duration="300"  className='w-full  md:w-1/2'>
+          <div    className='w-full  md:w-1/2'>
             <div className='hidden md:block my-2 '>
               <img src='/images/goodzone-logo.png' alt='truck' className='w-72   ' />
               <p className='flex p-2 items-center justify-center gap-2 rounded-[50px] font-medium text-red-600 bg-red-200 w-fit'>

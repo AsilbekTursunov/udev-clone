@@ -1,37 +1,49 @@
 'use client'
 import axios from 'axios'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
   const { t } = useTranslation()
+  const [action, setAction] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
   const sendMessage = e => {
     e.preventDefault()
     const token = '7123362946:AAFSr-g4W-yNQE7TZLAGrPh1WFqmZrJymJ8'
     const chat_id = 942734553
-    const name = e?.target[0]?.value
-    const email = e?.target[1]?.value
-    const message = e?.target[2]?.value
+
     axios({
       method: 'POST',
       url: `https://api.telegram.org/bot${token}/sendMessage`,
       data: {
         chat_id,
         parse_mode: 'HTML',
-        text: `Sizga habar yuborildi 
-                Ismi ${name}
-                Email: ${email}
-                Izoh: ${message}`,
+        text: `
+        Sizga habar yuborildi 
+        Ismi ${name}
+        Email: ${email}
+        Izoh: ${message}
+        `,
       },
     })
       .then(res => {
-        alert('Habringiz muvaffaqiyatli yuborildi')
+        setAction('success')
       })
       .catch(error => {
-        console.error('Error sending Telegram message:', error)
-        alert(`Qayta urinib ko'ring`)
+        setAction('error')
+      })
+      .finally(() => {
+        setName('')
+        setEmail('')
+        setMessage('')
       })
   }
+  setTimeout(() => {
+    setAction('')
+  }, 5000)
   return (
     <section>
       <div className='new-container bg-white' id='contact'>
@@ -54,6 +66,8 @@ const Contact = () => {
                   placeholder={t('message-name')}
                   className='  w-full h-full border-[1.5px] text-xl border-neutral-300 p-4 rounded-[4px] outline-neutral-400 '
                   id='name'
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                 />
               </label>
               <label htmlFor='name' className='relative'>
@@ -64,11 +78,15 @@ const Contact = () => {
                   placeholder={t('message-email')}
                   className='  w-full h-full border-[1.5px] text-xl border-neutral-300 p-4 rounded-[4px] outline-neutral-400 '
                   id='name'
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
               </label>
               <textarea
                 name='message'
                 placeholder={t('message-info')}
+                onChange={e => setMessage(e.target.value)}
+                value={message}
                 className=' w-full h-full border-[1.5px] text-xl border-neutral-300 p-4 rounded-[4px] outline-neutral-400 mt-5'
               />
               <button className='hover:scale-105 transition-all text-lg font-bold bg-btn text-white  md:self-start px-14 py-2 rounded-[4px] '>
@@ -88,6 +106,22 @@ const Contact = () => {
               ></iframe>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        className={`fixed w-screen h-screen bg-slate-800/70 shadow-slate-800  filter-none blur-lg left-0 top-0 ${
+          action.length > 0 ? 'flex' : 'hidden'
+        } items-center justify-center z-50`}
+      >
+        <div className='flex flex-col p-10 rounded-md bg-white items-center justify-center gap-5'>
+          <img
+            src={action == 'success' ? '/images/correct.gif' : '/images/error.gif'}
+            alt='succecc'
+            className='w-64'
+          />
+          <h1 className='text-xl text-paragraph-dark-2 font-semibold'>
+            {t(`${action == 'success' ? 'message-sent' : 'message-delete'}`)}
+          </h1>
         </div>
       </div>
     </section>

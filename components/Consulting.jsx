@@ -15,9 +15,8 @@ const Consulting = () => {
           <div className='w-full  md:w-1/2'>
             <p className='text-paragraph-light-dark text-[16px] lg:text-2xl'>{t('it-con-desc')}</p>
             <div
-              data-aos='fade-up'
-              data-aos-anchor-placement='bottom-bottom'
-              data-aos-duration='300'
+               
+               
               className='grid grid-cols-2 lg:grid-cols-3 gap-2 items-center justify-center mt-5 '
             >
               {[
@@ -40,8 +39,7 @@ const Consulting = () => {
           </div>
           <div className='w-full  md:w-1/2'>
             <img
-              data-aos='fade-down'
-              data-aos-duration='500'
+               
               src='/images/it-pattern.png'
               alt='phone'
               className='w-[1200px]'

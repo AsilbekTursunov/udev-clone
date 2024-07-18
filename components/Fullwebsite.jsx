@@ -1,3 +1,4 @@
+'use client'
 import Clients from '@/components/Clients'
 import Consulting from '@/components/Consulting'
 import Contact from '@/components/Contact'
@@ -16,8 +17,8 @@ import Team from '@/components/Team'
 import Tools from '@/components/Tools'
 import Uiux from '@/components/Uiux'
 import Wework from '@/components/Wework'
-import '../i18n.jsx'
-export default async function Home() {
+
+const Fullwebsite = () => {
   return (
     <main>
       <Header />
@@ -46,3 +47,5 @@ export default async function Home() {
     </main>
   )
 }
+
+export default Fullwebsite

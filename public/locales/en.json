@@ -60,5 +60,7 @@
   "we-work-three": "Offer",
   "we-work-four": "We provide a team for your requirements.",
   "about": "About",
-  "hero-main-headline":"IT-Outsourcing Company"
+  "hero-main-headline": "IT-Outsourcing Company",
+  "message-sent": "Your message succeccfully sent",
+  "message-delete": "!Ops somethinf went wrong"
 }

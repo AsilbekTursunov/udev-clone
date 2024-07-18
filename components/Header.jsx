@@ -1,15 +1,13 @@
 'use client'
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import Aos from 'aos'
-import 'aos/dist/aos.css'
-
-import { ChevronDown } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { CiMenuBurger } from 'react-icons/ci'
+import { ChevronDown, MenuSquare } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { FaYoutube } from 'react-icons/fa'
 import { IoLogoInstagram, IoLogoTwitter } from 'react-icons/io'
 import LanguageChanger from './LanguageChanger'
 import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/navigation'
 
 const menuItems = [
   { label: 'direction', href: '#direction' },
@@ -60,23 +58,16 @@ const menuItems = [
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const { t, i18n } = useTranslation()
-
-  useEffect(() => {
-    Aos.init({ duration: 500, disable: window.innerWidth < 1070 })
-  })
+  const router = useRouter()
   const handleChange = language => {
     i18n.changeLanguage(language)
   }
   return (
     <>
-      <section
-        data-aos='fade-down'
-        className='fixed inset-x-0 top-0 z-50  shadow-header-shadow bg-white'
-        id='#home'
-      >
+      <section className='fixed inset-x-0 top-0 z-50  shadow-header-shadow bg-white' id='#home'>
         <section>
           <section className='new-container'>
-            <nav className='flex items-center justify-between  h-[72px]  ' aria-label='Global'>
+            <nav className='flex items-center justify-between  h-[72px]  '>
               <div className='flex lg:flex-1'>
                 <a href='#home' className='-m-1.5 p-1.5'>
                   <img className='h-[44px]   w-[105px]' src='/images/logo-udev.png' alt='' />
@@ -88,13 +79,13 @@ const Header = () => {
                     src={'/images/flag-eng.svg'}
                     alt=''
                     className={`w-[20px] h-[20px] cursor-pointer `}
-                    onClick={() => handleChange('en')}
+                    onClick={() => {handleChange('en'), router.push('/en')}}
                   />
                   <img
                     src={'/images/flag-ru.svg'}
                     alt=''
                     className={`w-[20px] h-[20px] cursor-pointer `}
-                    onClick={() => handleChange('ru')}
+                    onClick={() => {handleChange('ru'), router.push('/ru')}}
                   />
                 </div>
                 <button
@@ -102,21 +93,7 @@ const Header = () => {
                   className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
                   onClick={() => setOpenMenu(true)}
                 >
-                  <span className='sr-only'>Open main menu</span>
-                  <svg
-                    className='h-6 w-6'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke-width='1.5'
-                    stroke='currentColor'
-                    aria-hidden='true'
-                  >
-                    <path
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
-                    />
-                  </svg>
+                  <CiMenuBurger />
                 </button>
               </div>
               <ul className='hidden lg:flex gap-2 items-center'>
@@ -192,7 +169,7 @@ const Header = () => {
           </section>
         </section>
       </section>
-      <div className='lg:hidden fixed  h-screen top-0 z-50  ' role='dialog' aria-modal='true'>
+      <div className='lg:hidden fixed  h-screen top-0 z-50  '>
         <div
           className={`fixed inset-y-0 right-0 ${
             openMenu ? 'translate-x-0' : 'translate-x-full'
@@ -226,7 +203,8 @@ const Header = () => {
               <ul className='space-y-2 py-6 flex flex-col text-center'>
                 <li>
                   <a
-                    href={'#'}
+                    href={'#direction'}
+                    onClick={() => setOpenMenu(false)}
                     className='text-sm font-bold  justify-center leading-6 text-paragraph-light-dark flex items-center gap-2'
                   >
                     {t('services')}
@@ -234,7 +212,8 @@ const Header = () => {
                 </li>
                 <li>
                   <a
-                    href={'#'}
+                    href={'#clients'}
+                    onClick={() => setOpenMenu(false)}
                     className='text-sm font-bold justify-center  leading-6 text-paragraph-light-dark flex items-center gap-2'
                   >
                     {t('clients')}
@@ -242,7 +221,8 @@ const Header = () => {
                 </li>
                 <li>
                   <a
-                    href={'#'}
+                    href={'#commond'}
+                    onClick={() => setOpenMenu(false)}
                     className='text-sm font-bold justify-center  leading-6 text-paragraph-light-dark flex items-center gap-2'
                   >
                     {t('commond')}
@@ -251,6 +231,7 @@ const Header = () => {
                 <li className='hover:scale-105 transition-all flex flex-col'>
                   <a
                     href='#contact'
+                    onClick={() => setOpenMenu(false)}
                     className='text-sm font-bold  bg-btn text-white leading-6  px-6 py-3 rounded-[8px] '
                   >
                     {t('contact')}

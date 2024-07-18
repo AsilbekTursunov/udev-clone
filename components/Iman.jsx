@@ -14,7 +14,7 @@ const Iman = () => {
           </p>
         </div>
         <div className='flex flex-col justify-center md:flex-row lg:justify-between gap-14 mt-14'>
-          <div data-aos='fade-left' data-aos-duration='300' className='w-full  md:w-1/2'>
+          <div   className='w-full  md:w-1/2'>
             <div className='hidden md:block my-2 '>
               <img src='/images/iman.png' alt='truck' className='w-56   ' />
               <p className='flex p-2 items-center justify-center gap-2 rounded-[50px] font-medium mt-4 text-teal-500 bg-teal-200 w-fit'>
@@ -43,8 +43,7 @@ const Iman = () => {
             </div>
           </div>
           <div
-            data-aos='zoom-in'
-            data-aos-duration='300'
+             
             className='w-full flex items-center  md:w-1/2'
           >
             <img src='/images/iman-mobile.png' alt='phone' className='w-[1200px]' />

@@ -8,7 +8,16 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michalsnik/aos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michalsnik/aos/issues"
+  },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "animated-number-react2": "^0.1.19",
     "aos": "^2.3.4",
     "axios": "^1.7.2",
     "clsx": "^2.1.1",

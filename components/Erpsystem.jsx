@@ -10,13 +10,12 @@ const Erpsystem = () => {
         <h2 className='blog-headers text-start '>{t('erp-headline')}</h2>
         <div className='mt-10 flex flex-col md:flex-row gap-10'>
           <div
-            data-aos='fade-right'
-            data-aos-duration='300'
+             
             className=' flex  justify-center  items-center md:w-1/2'
           >
             <img src='/images/erp-system.jpeg' alt='team-image' className=' w-[1000px]' />
           </div>
-          <div data-aos='fade-down-left' data-aos-duration='300' className='flex flex-col md:w-1/2'>
+          <div  className='flex flex-col md:w-1/2'>
             <p className='text-paragraph-light-dark text-[16px] md:text-2xl'>
             {t('erp-desc')}
             </p>
