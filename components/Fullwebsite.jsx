@@ -17,8 +17,11 @@ import Team from '@/components/Team'
 import Tools from '@/components/Tools'
 import Uiux from '@/components/Uiux'
 import Wework from '@/components/Wework'
+import { usePathname } from 'next/navigation'
 
 const Fullwebsite = () => {
+  
+
   return (
     <main>
       <Header />

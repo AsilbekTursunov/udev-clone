@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useTranslation } from 'react-i18next'
- 
 
 const services = [
   {
@@ -26,10 +25,9 @@ const Direction = () => {
       <div className='new-container py-10' id='direction'>
         <h2 className='blog-headers text-center md:text-start '>{t(`our-service`)}</h2>
         <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10 gap-4'>
-          {services.map(item => (
+          {services.map((item, index) => (
             <div
-              key={item.label}
-              
+              key={index}
               className='  flex flex-col items-start justify-start gap-5 bg-menu p-6 rounded-[8px]'
             >
               <img src={item.image} alt={item.label} className='size-[35px]' />

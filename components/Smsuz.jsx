@@ -32,9 +32,9 @@ const Smsuz = () => {
                 { image: '/images/web.png', label: 'Website' },
                 { image: '/images/admin.png', label: 'Admin panel' },
                 { image: '/images/cross-platform.png', label: 'Crossplatform' },
-              ].map(item => (
+              ].map((item, index) => (
                 <div
-                  key={item.label}
+                  key={index}
                   className='flex flex-col items-center gap-3 bg-menu p-5 rounded-[8px] '
                 >
                   <img src={item.image} alt={item.label} className=' w-8 md:w-14' />

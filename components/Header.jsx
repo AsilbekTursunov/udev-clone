@@ -79,13 +79,17 @@ const Header = () => {
                     src={'/images/flag-eng.svg'}
                     alt=''
                     className={`w-[20px] h-[20px] cursor-pointer `}
-                    onClick={() => {handleChange('en'), router.push('/en')}}
+                    onClick={() => {
+                      handleChange('en'), router.push('/en')
+                    }}
                   />
                   <img
                     src={'/images/flag-ru.svg'}
                     alt=''
                     className={`w-[20px] h-[20px] cursor-pointer `}
-                    onClick={() => {handleChange('ru'), router.push('/ru')}}
+                    onClick={() => {
+                      handleChange('ru'), router.push('/ru')
+                    }}
                   />
                 </div>
                 <button
@@ -97,11 +101,8 @@ const Header = () => {
                 </button>
               </div>
               <ul className='hidden lg:flex gap-2 items-center'>
-                {menuItems.map(item => (
-                  <li
-                    key={item.label}
-                    className={`p-2 mr-2 relative flex justify-center ${item.label}`}
-                  >
+                {menuItems.map((item, index) => (
+                  <li key={index} className={`p-2 mr-2 relative flex justify-center ${item.label}`}>
                     <a
                       href={item.href}
                       className='text-sm font-bold leading-6 text-paragraph-light-dark flex items-center gap-2'
@@ -123,10 +124,11 @@ const Header = () => {
                             {item.header}
                           </h3>
                         )}
-                        {item.values?.map(popup => {
+                        {item.values?.map((popup, index) => {
                           return (
                             <a
                               href={popup.href}
+                              key={index}
                               className={`flex items-center bg-white px-6 py-2 justify-start gap-2 hover:bg-blue-600 hover:text-white cursor-pointer ${
                                 item.header === 'services'
                                   ? ' w-[320px]'
@@ -189,11 +191,11 @@ const Header = () => {
                   className='h-6 w-6'
                   fill='none'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
-                  aria-hidden='true'
+                  aria-hidden='true' 
                 >
-                  <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' />
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M6 18L18 6M6 6l12 12' />
                 </svg>
               </button>
             </div>

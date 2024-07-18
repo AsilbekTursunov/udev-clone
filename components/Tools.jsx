@@ -69,7 +69,7 @@ const Tools = () => {
             >
               {item.skills.map(skill => (
                 <li
-                  key={skill.jobType}
+                  key={skill.label}
                   className={`flex flex-col items-center gap-2 rounded-md h-[90px] ${
                     selectedJob == '' || selectedJob == skill.jobType ? '' : 'opacity-30'
                   }  ${

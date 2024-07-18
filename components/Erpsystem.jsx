@@ -9,16 +9,11 @@ const Erpsystem = () => {
       <div className='new-container py-10'>
         <h2 className='blog-headers text-start '>{t('erp-headline')}</h2>
         <div className='mt-10 flex flex-col md:flex-row gap-10'>
-          <div
-             
-            className=' flex  justify-center  items-center md:w-1/2'
-          >
+          <div className=' flex  justify-center  items-center md:w-1/2'>
             <img src='/images/erp-system.jpeg' alt='team-image' className=' w-[1000px]' />
           </div>
-          <div  className='flex flex-col md:w-1/2'>
-            <p className='text-paragraph-light-dark text-[16px] md:text-2xl'>
-            {t('erp-desc')}
-            </p>
+          <div className='flex flex-col md:w-1/2'>
+            <p className='text-paragraph-light-dark text-[16px] md:text-2xl'>{t('erp-desc')}</p>
             <div className='grid grid-cols-2 lg:grid-cols-3 gap-2 items-center justify-center mt-5 '>
               {[
                 { image: '/images/erp-1.png', label: 'CRM' },
@@ -27,9 +22,9 @@ const Erpsystem = () => {
                 { image: '/images/erp-4.png', label: 'POS' },
                 { image: '/images/erp-5.png', label: 'Sms / Email' },
                 { image: '/images/erp-6.png', label: 'Warehouse' },
-              ].map(item => (
+              ].map((item, index) => (
                 <div
-                  key={item.label}
+                  key={index}
                   className='flex flex-col items-center gap-3 bg-card-1 p-5 rounded-[8px] h-full'
                 >
                   <img src={item.image} alt={item.label} className=' w-8 md:w-14' />
@@ -43,8 +38,8 @@ const Erpsystem = () => {
                 { image: '/images/swift.png', label: 'Swift' },
                 { image: '/images/kotlin.png', label: 'Kotlin' },
                 { image: '/images/flutter.png', label: 'Flutter' },
-              ].map(item => (
-                <div key={item.label} className='flex flex-col items-center gap-3  rounded-[8px]  '>
+              ].map((item, index) => (
+                <div key={index} className='flex flex-col items-center gap-3  rounded-[8px]  '>
                   <img src={item.image} alt={item.label} className=' w-8 md:w-14' />
                   <p className='text-lg font-semibold'>{item.label}</p>
                 </div>

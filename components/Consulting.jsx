@@ -26,9 +26,9 @@ const Consulting = () => {
                 { image: '/images/it-4.png', label: 'DevOps' },
                 { image: '/images/it-5.png', label: 'UX/UI' },
                 { image: '/images/it-6.png', label: 'QA' },
-              ].map(item => (
+              ].map((item, index) => (
                 <div
-                  key={item.label}
+                  key={index}
                   className='flex flex-col items-center gap-3 bg-menu p-5 rounded-[8px] '
                 >
                   <img src={item.image} alt={item.label} className=' w-8 md:w-14' />

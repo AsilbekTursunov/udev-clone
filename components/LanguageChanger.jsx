@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 
 export default function LanguageChanger() {
@@ -9,7 +9,6 @@ export default function LanguageChanger() {
   const handleChange = language => {
     i18n.changeLanguage(language)
   }
-
   return (
     <span className='absolute   border hidden py-2 rounded-[8px] shadow-md top-10 bg-white -left-2 languages-popup'>
       <span

@@ -1,6 +1,5 @@
 import { Manrope } from 'next/font/google'
-import './globals.css'
-import Aos from 'aos'
+import './globals.css' 
 
 const inter = Manrope({ subsets: ['latin'] })
 
